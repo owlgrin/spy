@@ -1,0 +1,21 @@
+{
+    "name": "owlgrin/analytics",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mohit Mamoria",
+            "email": "mohit.mamoria@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "intercom/intercom-php": "1.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Owlgrin\\Analytics": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
