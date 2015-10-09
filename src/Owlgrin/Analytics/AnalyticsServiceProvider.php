@@ -1,6 +1,7 @@
 <?php namespace Owlgrin\Analytics;
 
 use Illuminate\Support\ServiceProvider;
+use Config;
 
 class AnalyticsServiceProvider extends ServiceProvider {
 
@@ -18,7 +19,12 @@ class AnalyticsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app->bind('Owlgrin\Analytics\AnalyticClient\AnalyticInterface', function($app)
+		{
+			return $this->app->make(Config::get('analytics::analytic'));
+		});
+
+		$this->app->singleton('analytics', 'Owlgrin\Analytics\Analytics');
 	}
 
 	/**
@@ -29,6 +35,11 @@ class AnalyticsServiceProvider extends ServiceProvider {
 	public function provides()
 	{
 		return array();
+	}
+
+	public function boot()
+	{
+		$this->package('owlgrin/analytics');
 	}
 
 }
