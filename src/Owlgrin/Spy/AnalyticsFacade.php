@@ -1,11 +1,11 @@
-<?php namespace Owlgrin\Analytics;
+<?php namespace Owlgrin\Spy;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * The Cashew Facade
  */
-class AnalyticsFacade extends Facade
+class SpyFacade extends Facade
 {
 	/**
 	 * Returns the binding in IoC container
@@ -13,6 +13,6 @@ class AnalyticsFacade extends Facade
 	 */
 	protected static function getFacadeAccessor()
 	{
-		return 'analytics';
+		return 'spy';
 	}
 }

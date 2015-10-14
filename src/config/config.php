@@ -2,7 +2,7 @@
 
 return array(
 
-	'analytic' => 'Owlgrin\Analytics\AnalyticClient\IntercomAnalytic',
+	'client' => 'Owlgrin\Spy\SpyClient\IntercomService',
 	'integrations' => [
 		'users' => [
 			'app_id'   => 'eawfwaw9',

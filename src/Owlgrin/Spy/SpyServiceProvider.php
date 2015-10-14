@@ -1,9 +1,9 @@
-<?php namespace Owlgrin\Analytics;
+<?php namespace Owlgrin\Spy;
 
 use Illuminate\Support\ServiceProvider;
 use Config;
 
-class AnalyticsServiceProvider extends ServiceProvider {
+class SpyServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -19,12 +19,12 @@ class AnalyticsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind('Owlgrin\Analytics\AnalyticClient\AnalyticInterface', function($app)
+		$this->app->bind('Owlgrin\Spy\SpyClient\ClientInterface', function($app)
 		{
-			return $this->app->make(Config::get('analytics::analytic'));
+			return $this->app->make(Config::get('spy::client'));
 		});
 
-		$this->app->singleton('analytics', 'Owlgrin\Analytics\Analytics');
+		$this->app->singleton('spy', 'Owlgrin\Spy\Spy');
 	}
 
 	/**
@@ -39,7 +39,7 @@ class AnalyticsServiceProvider extends ServiceProvider {
 
 	public function boot()
 	{
-		$this->package('owlgrin/analytics');
+		$this->package('owlgrin/spy');
 	}
 
 }

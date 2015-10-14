@@ -1,5 +1,5 @@
 {
-    "name": "owlgrin/analytics",
+    "name": "owlgrin/spy",
     "description": "",
     "authors": [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Owlgrin\\Analytics": "src/"
+            "Owlgrin\\Spy": "src/"
         }
     },
     "minimum-stability": "stable"
