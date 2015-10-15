@@ -21,13 +21,6 @@ class Spy {
 		return $this;
 	}
 
-	public function reinit($user, $type)
-	{
-		if($this->user) return;
-
-		$this->init($user, $type);
-	}
-
 	public function getUsers()
 	{
 		return $this->client->getUsers();
