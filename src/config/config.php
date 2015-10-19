@@ -1,7 +1,7 @@
 <?php
 
 return array(
-
+	'allow_analytics' => true,
 	'client' => 'Owlgrin\Spy\SpyClient\IntercomService',
 	'integrations' => [
 		'users' => [
@@ -43,7 +43,22 @@ return array(
 		'invite-friend',
 		'profile_has_clicked_login',
 		'profile_has_authorised_login',
-		'consumer_register'
+		'consumer_register',
+		'producthunt_login_attempt',
+		'producthunt_login_authorize',
+		'producthunt_login_refresh',
+		'basecamp_login_attempt',
+		'basecamp_login_authorize',
+		'trello_login_attempt',
+		'trello_login_authorize',
+		'github_login_attempt',
+		'github_login_authorize',
+		'mailchimp_login_attempt',
+		'mailchimp_login_authorize',
+		'stripe_login_attempt',
+		'stripe_login_authorize',
+		'shopify_login_attempt',
+		'shopify_login_authorize',
 	),
 	'user_meta_data' => [
 		'user_id',
