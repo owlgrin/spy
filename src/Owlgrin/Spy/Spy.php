@@ -35,7 +35,7 @@ class Spy {
 	 */
 	public function storeUser($meta)
 	{
-		if( ! Config::get('spy::allow_analytics')) return;
+		if( ! Config::get('spy::track_internal_events')) return;
 
 		return $this->client->createUser($this->user, $meta);
 	}
@@ -49,10 +49,10 @@ class Spy {
 	 */
 	public function createEvent($eventName, $metaData)
 	{
-		if( ! Config::get('spy::allow_analytics')) return;
+		if( ! Config::get('spy::track_internal_events')) return;
 
 		//if event not in array then skip
-		if( ! in_array($eventName, Config::get('spy::events'))) return;
+		if( ! in_array($eventName, Config::get('spy::trackable_events'))) return;
 
 		return $this->client->createEvent($eventName, $this->user, $metaData);
 	}
