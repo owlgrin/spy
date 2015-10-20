@@ -21,13 +21,6 @@ class Spy {
 		return $this;
 	}
 
-	public function reinit($user, $type)
-	{
-		if($this->user) return;
-
-		$this->init($user, $type);
-	}
-
 	public function getUsers()
 	{
 		return $this->client->getUsers();
@@ -42,6 +35,8 @@ class Spy {
 	 */
 	public function storeUser($meta)
 	{
+		if( ! Config::get('spy::allow_analytics')) return;
+
 		return $this->client->createUser($this->user, $meta);
 	}
 
@@ -54,6 +49,8 @@ class Spy {
 	 */
 	public function createEvent($eventName, $metaData)
 	{
+		if( ! Config::get('spy::allow_analytics')) return;
+
 		//if event not in array then skip
 		if( ! in_array($eventName, Config::get('spy::events'))) return;
 
