@@ -1,3 +1,3 @@
 <?php namespace Owlgrin\Spy\Errors;
 
-class AuthenticationError extends Error {}
+class NotFoundError extends Error {}
